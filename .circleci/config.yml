@@ -6,8 +6,7 @@ jobs:
     executor: aws-cli/default
     steps:
       - checkout
-      - aws-cli/setup:
-          aws-region: us-east-1
+      - aws-cli/setup: {}
       - run: aws --version
 workflows:
   version: 2
