@@ -80,7 +80,6 @@ Resources:
           - AllowedMethods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"]
             Compress: 'true'
             DefaultTTL: 0
-            FieldLevelEncryptionId: String
             ForwardedValues:
               Cookies:
                 Forward: all
