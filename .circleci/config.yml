@@ -10,7 +10,7 @@ jobs:
           configure-default-region: false
       - run:
           name: Deploy CloudFront
-          no_output_timeout: 30m
+          no_output_timeout: 45m
           command: |
             aws cloudformation deploy --region us-east-1 \
                                --template-file cloudformation-template.yml \

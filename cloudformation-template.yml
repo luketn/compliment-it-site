@@ -86,9 +86,9 @@ Resources:
             Compress: true
             DefaultTTL: 0
             ForwardedValues:
-              Headers: [Accept, Authorization, Origin]
+              Headers: [Accept, Authorization]
               Cookies:
-                Forward: all
+                Forward: none
               QueryString: true
             PathPattern: "/api/*"
             TargetOriginId: API
