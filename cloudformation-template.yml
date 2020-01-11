@@ -73,7 +73,7 @@ Resources:
             Id: API
         Comment: !Sub "CloudFront origin for  ${WebsiteAddress}"
         DefaultCacheBehavior:
-          AllowedMethods: ["GET", "HEAD", "OPTIONS"]
+          AllowedMethods: [GET, HEAD, OPTIONS]
           TargetOriginId: S3BucketOrigin
           ForwardedValues:
             QueryString: "false"
@@ -81,7 +81,7 @@ Resources:
               Forward: none
           ViewerProtocolPolicy: redirect-to-https
         CacheBehaviors:
-          - AllowedMethods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"]
+          - AllowedMethods: [HEAD, DELETE, POST, GET, OPTIONS, PUT, PATCH]
             Compress: 'true'
             DefaultTTL: 0
             ForwardedValues:
