@@ -77,8 +77,7 @@ Resources:
               Forward: none
           ViewerProtocolPolicy: redirect-to-https
         CacheBehaviors:
-          - AllowedMethods:
-              - ["POST", "GET", "PUT", "DELETE", "OPTIONS"]
+          - AllowedMethods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"]
             Compress: 'true'
             DefaultTTL: 0
             FieldLevelEncryptionId: String
