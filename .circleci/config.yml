@@ -6,8 +6,20 @@ jobs:
     executor: aws-cli/default
     steps:
       - checkout
-      - aws-cli/setup: {}
-      - run: aws --version
+      - aws-cli/setup:
+          configure-default-region: false
+      - run:
+          name: deploy
+          command: |
+            aws --version
+#            aws cloudformation deploy --region us-east-1 \
+#                               --template-file cloudformation-template.yml \
+#                               --stack-name compliment-it-site \
+#                               --parameter-overrides \
+#                                  "HostedZoneName=compliment.it." \
+#                                  "WebsiteAddress=compliment.it" \
+#                                  "S3BucketName=compliment-it-site" \
+#                                  "TlsCertificateArn=arn:aws:acm:us-east-1:204244381428:certificate/979e3816-42f5-4751-9647-2646808a4317"
 workflows:
   version: 2
   aws-cli:
