@@ -66,6 +66,10 @@ Resources:
               OriginAccessIdentity: !Sub "origin-access-identity/cloudfront/${S3BucketCloudFrontOriginAccessIdentity}"
           - DomainName: "api.compliment.it"
             OriginPath: "compliment-it-api"
+            CustomOriginConfig:
+              OriginKeepaliveTimeout: 60
+              OriginProtocolPolicy: https-only
+              OriginReadTimeout: 60
             Id: API
         Comment: !Sub "CloudFront origin for  ${WebsiteAddress}"
         DefaultCacheBehavior:
