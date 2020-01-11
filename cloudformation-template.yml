@@ -76,7 +76,7 @@ Resources:
           AllowedMethods: [GET, HEAD, OPTIONS]
           TargetOriginId: S3BucketOrigin
           ForwardedValues:
-            QueryString: "false"
+            QueryString: false
             Cookies:
               Forward: none
           ViewerProtocolPolicy: redirect-to-https
@@ -85,10 +85,11 @@ Resources:
             Compress: 'true'
             DefaultTTL: 0
             ForwardedValues:
+              Headers: ["*"]
               Cookies:
                 Forward: all
-              QueryString: 'true'
-            PathPattern: "/compliment-it-api/*"
+              QueryString: true
+            PathPattern: "/api/*"
             TargetOriginId: API
             ViewerProtocolPolicy: redirect-to-https
         DefaultRootObject: index.html
