@@ -82,10 +82,11 @@ Resources:
           ViewerProtocolPolicy: redirect-to-https
         CacheBehaviors:
           - AllowedMethods: [HEAD, DELETE, POST, GET, OPTIONS, PUT, PATCH]
-            Compress: 'true'
+            CachedMethods: [GET, HEAD, OPTIONS]
+            Compress: true
             DefaultTTL: 0
             ForwardedValues:
-              Headers: ["*"]
+              Headers: [Accept, Authorization, Origin]
               Cookies:
                 Forward: all
               QueryString: true
