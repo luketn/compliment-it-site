@@ -15,6 +15,7 @@ jobs:
             aws cloudformation deploy --region us-east-1 \
                                --template-file cloudformation-template.yml \
                                --stack-name compliment-it-site \
+                               --no-fail-on-empty-changeset \
                                --parameter-overrides \
                                   "HostedZoneName=compliment.it." \
                                   "WebsiteAddress=compliment.it" \
