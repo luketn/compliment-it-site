@@ -76,7 +76,7 @@ Resources:
             Cookies:
               Forward: none
           ViewerProtocolPolicy: redirect-to-https
-        CacheBehaviours:
+        CacheBehaviors:
           - AllowedMethods:
               - ["POST", "GET", "PUT", "DELETE", "OPTIONS"]
             Compress: 'true'
